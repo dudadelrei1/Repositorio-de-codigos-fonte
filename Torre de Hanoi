@@ -2,7 +2,7 @@
 
 int main()
 {
-   //Inicializa variáveis
+   //Inicialização das variáveis
     int pilhamovidainicialmente = 0; 
     
     //Explica o intuito do algoritmo
