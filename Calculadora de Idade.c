@@ -2,7 +2,7 @@
 
 int main(){
 
-    /* Variáveis para as datas */
+    /* Declaração de variáveis */
     int dia, mes, ano, dia_nasc, mes_nasc, ano_nasc;
 
     /* Entrada da data de nascimento do usuário */
