@@ -6,7 +6,7 @@ int main(){
     int dia, mes, ano, dia_nasc, mes_nasc, ano_nasc;
 
     /* Entrada da data de nascimento do usuário */
-    printf("Vamos começar com a sua data do seu nascimento\n");
+    printf("Vamos começar com a sua data de nascimento\n");
     printf("Digite o dia: ");
     scanf("%d", &dia_nasc);
     printf("Digite o mês: ");
