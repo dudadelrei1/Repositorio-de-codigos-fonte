@@ -27,14 +27,14 @@ int main () {
         printf("O valor em reais é: R$ %.2f\n", valor_real);
     } else if (opcao == 3) {
         printf("Digite o valor em Reais (BRL): ");
-        scanf("%f", &real);
+        scanf("%f", &valor_real);
         valor_euro = valor_real / cotacao_euro;
-        printf("%.2f BRL = %.2f EUR\n", real, euro);
+        printf("%.2f BRL = %.2f EUR\n", valor_real, valor_euro);
     } else if (opcao == 4) {
         printf("Digite o valor em Euros (EUR): ");
-        scanf("%f", &euro);
+        scanf("%f", &valor_euro);
         valor_real = valor_euro * cotacao_euro;
-        printf("%.2f EUR = %.2f BRL\n", euro, real);
+        printf("%.2f EUR = %.2f BRL\n", valor_euro, valor_real);
     } else {
         printf("Opcao invalida!\n");
     }
