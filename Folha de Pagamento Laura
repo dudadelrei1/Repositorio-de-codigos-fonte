@@ -1,0 +1,169 @@
+#include <stdio.h>
+
+int main()
+{
+    
+    float PATRAO_FUNCIONARIO =0;
+    
+    printf("Voce é patrão ou funcionario? se for patrão, digite (1), se for funcionario digite (2) \n");
+    scanf("%f", &PATRAO_FUNCIONARIO);
+    
+    if (PATRAO_FUNCIONARIO == 1){
+    
+    float Valor =0, valor1 =0, valor2 =0, valor3 =0, valor4 =0, valor5 =0, valor6 =0, valor7, valor8 =0, valor9=0;
+    float IRPJ =0, CSLL = 0, PIS = 0, COFINS =0, ISS =0, resultado1 =0, resultado2 = 0, resultado3 =0;
+    float faixa1 = 1888.60, faixa2 = 2542.93, faixa3 = 3288.85, faixa4 = 4207.86, acima_faixa = 5000.00;
+    float total_salarios =0, fgts =0, inss_patronal =0;
+    
+    printf("Digite os seus lucros mensais, trimestrais e anuais: \n");
+    scanf("%f", &Valor);
+    scanf("%f", &valor1);
+    scanf("%f", &valor2);
+    
+    resultado1 = valor1*0.15; PIS = Valor*0.0065;
+    resultado2 = valor1*0.10; COFINS = Valor*0.04;
+    resultado3 = resultado1+resultado2; ISS = Valor*0.05;
+    CSLL = valor1*0.09;
+    
+    if(valor1>=60000){
+        printf("Voce paga de imposto de renda trimestral: %2.f\n", resultado1);
+    }
+    if(valor1<=60000){
+        printf("Voce paga de imposto de renda trimestral: %2.f\n", resultado3);
+    }
+    
+    printf("Voce paga de contribuição social: %2.f\n",CSLL);
+    printf("Voce paga de Programa de Integração Social: %2.f\n",PIS);
+    printf("Voce paga de Contribuição para o Financiamento da Seguridade Social: %2.f\n",COFINS);
+    printf("Voce paga de Imposto Sobre Serviços: %2.f\n",ISS);
+    
+    //FUNCIONARIOS//
+    
+    printf("Digite quantos funcionarios voce tem na sua empresa\n");
+    scanf("%f", &valor4);
+    printf("Dentro das faixas salariais diga a quantidade de funcionarios e os seus salarios respectivamente: \n");
+    printf("Digite a quantidade de funcionarios que recebe um salario minimo \n");
+    scanf("%f", &valor4);
+    printf("Digite a quantidade de funcionarios que recebe entre 1.518 e 2.259,20 \n");
+    scanf("%f", &valor5);
+    printf("Digite a quantidade de funcionarios que recebe entre 2.259,20 e 2.826,65 \n");
+    scanf("%f", &valor6);
+    printf("Digite a quantidade de funcionarios que recebe entre 2.826,65 e 3.751,05 \n");
+    scanf("%f", &valor7);
+    printf("Digite a quantidade de funcionarios que recebe entre 3.751,05 e 4.664,68 \n");
+    scanf("%f", &valor8);
+    printf("Digite a quantidade de funcionarios que recebe mais de 4.664,68 \n");
+    scanf("%f", &valor9);
+    
+    total_salarios = (valor4 * 1518) +  (valor5 * faixa1) +(valor6 * faixa2) + (valor7 * faixa3) + (valor8 * faixa4) +
+     (valor9 * acima_faixa);
+
+    fgts = total_salarios * 0.08;
+    inss_patronal = total_salarios * 0.20;
+
+    printf("\nResumo do pagamento de encargos:\n");
+    printf("Total de salarios pagos: R$ %.2f\n", total_salarios);
+    printf("INSS Patronal (20%%): R$ %.2f\n", inss_patronal);
+    printf("FGTS (8%%): R$ %.2f\n", fgts);
+    printf("Total de encargos (INSS + FGTS): R$ %.2f\n", inss_patronal + fgts);
+
+    }
+    
+    if(PATRAO_FUNCIONARIO == 2) {
+         //iniciando variaveis// 
+    float valor = 0, vale = 0, dias = 0, transporte = 0, resultado = 0, resultado1 = 0;
+    float resultado2 = 0, resultado3 = 0, resultado4 = 0, resultado5 = 0, resultado6 = 0;
+    float resultado7 = 0, sindicato = 0, MQ =0, resultado8 = 0, resultado9 = 0, imposto =0;
+    float posto = 0, INSS = 0, S1 =0, Salario_final = 0, FGTS = 0;
+    
+    //iniciando todas asa perguntas//
+    printf("Digite o seu salario: \n");
+    scanf("%f", &valor);
+    printf("Digite o valor do seu vale alimentação: \n");
+    scanf("%f", &vale);
+    printf ("Digite a quantidade de dias trabalhados por mes: \n");
+    scanf("%f", &dias);
+    printf("Voce tem vale transporte? se sim digite (1) se não digite (2) \n");
+    scanf("%f", &transporte);
+    printf("Voce contribui com o seu sindicato? se sim, digite (1) se não, digite (2)\n");
+    scanf("%f", &sindicato);
+    printf("Seu pagaemnto é mensal ou quinzenal? se mensal, digite (1), se quinzenal, digite (2) \n");
+    scanf("%f", &MQ);
+    
+    //fazendo todos os calculos//
+    resultado = valor * 0.075; resultado5 = valor*0.09;
+    resultado1 = valor * 0.15; resultado6 = valor*0.12;
+    resultado2 = valor * 0.225; resultado7 = valor*0.14;
+    resultado3 = valor * 0.275; resultado8 = valor*0.033;
+    resultado4 = valor*0.06;   resultado9 = valor*0.066;
+    posto = resultado, resultado1, resultado2, resultado3;
+    INSS = resultado5, resultado6, resultado7;
+    S1 = resultado8, resultado9;
+    Salario_final = vale + valor - posto - INSS - S1;
+    FGTS = valor*0.08;
+    
+    //Colocando todos os IFS//
+    if (valor == 1518) {
+        printf("Voce recebe salario minimo\n");
+    }
+
+    if (valor > 1518 && valor < 2259.20) {
+        printf("Voce não paga imposto\n");
+    }
+
+    if (valor >= 2259.20 && valor <= 2826.65) {
+        printf("Voce paga imposto de renda: %.2f\n", resultado);
+    }
+    
+    if (valor >= 2826.65 && valor <=  3751.05){
+        printf("Voce paga imposto de renda: %.2f\n", resultado1);
+    }
+    
+    if (valor >= 3751.06 && valor <= 4664.68) {
+        printf("Voce paga imposto de renda: %.2f\n", resultado2);
+    }
+    
+    if(valor > 4664.68) {
+        printf("Voce paga imposto de renda: %.2f\n", resultado3);
+    }
+    
+    if (vale = 0) {
+        printf ("auxilio alimenticio não foi somado");
+    }
+    if (transporte = 1){
+    printf("Valor do vale transporte a ser descontado da sua folha de pagamento: %.2f\n", resultado4);
+    }
+    
+     if (valor == 1518) {
+        printf("Valor do desconto do seu INSS: %2.f\n", resultado);
+    }
+    
+    if (valor > 1518 && valor < 2793.88) {
+        printf("Valor do desconto do seu INSS: %2.f\n", resultado5);
+    }
+    
+    if (valor > 2793.89 && valor < 4190.83) {
+        printf("Valor do desconto do seu INSS: %2.f\n", resultado6);
+    }
+    
+     if (valor > 4190.84 && valor < 8157.41) {
+        printf("Valor do desconto do seu INSS: %2.f\n", resultado7);
+    }
+    
+    if (MQ == 1) {
+    printf("Valor do sindicato a ser descontado da sua folha de pagamento: %.2f\n", resultado8);
+    }
+    
+    if (MQ == 2) {
+    printf("Valor do sindicato a ser descontado da sua folha de pagamento: %.2f\n", resultado9);
+    }
+    
+    printf("Seu salario final com auxilios e vales é: %.2f\n", Salario_final);
+    printf("É depositado mensalmente em seu fundo de garantia o valor equivalente a: %.2f\n", FGTS);
+
+    }
+
+ 
+
+    return 0;
+}
