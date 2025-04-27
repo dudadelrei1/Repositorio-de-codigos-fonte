@@ -28,5 +28,32 @@ int main () {
         printf("Opção inválida\n");
     }
 
+
+    float real, euro, cotacao_euro = 6.49; 
+    
+
+    printf("\nEscolha uma das opções abaixo:\n");
+    printf("1. Real para Euro\n");
+    printf("2. Euro para Real\n");
+    printf("Escolha a opcao 1 ou 2: ");
+    scanf("%d", &opcao);
+
+    if (opcao == 1) {
+        printf("Digite o valor em Reais (BRL): ");
+        scanf("%f", &real);
+        euro = real / cotacao_euro;
+        printf("%.2f BRL = %.2f EUR\n", real, euro);
+        
+    } else if (opcao == 2) {
+        printf("Digite o valor em Euros (EUR): ");
+        scanf("%f", &euro);
+        real = euro * cotacao_euro;
+        printf("%.2f EUR = %.2f BRL\n", euro, real);
+        
+    } else {
+        printf("Opcao invalida!\n");
+    }
+
+   
     return 0;
 }
