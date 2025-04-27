@@ -5,14 +5,16 @@ int main () {
     /* Programa para a conversão de moedas */
 
     int opcao = 0;
-    float valor_real, valor_dolar = 0, valor_euro, cotacao_dolar = 5.6833, cotacao_euro = 6.49; 
+    float valor_real = 0, valor_dolar = 0, valor_euro = 0, valor_iene = 0, cotacao_dolar = 5.6833, cotacao_euro = 6.49, cotacao_iene = 0.040; 
 
     printf("\nEscolha uma das opções abaixo:\n");
     printf("1. Real para Dólar\n");
     printf("2. Dólar para Real\n");
     printf("3. Real para Euro\n");
     printf("4. Euro para Real\n");
-    printf("Escolha a opção 1 2 3 ou 4: ");
+    printf("5. Real para Iene\n");
+    printf("6. Yen para real\n");
+    printf("Escolha a opção 1, 2, 3, 4, 5 ou 6: ");
     scanf("%d", &opcao);
 
     if (opcao == 1) {
@@ -35,7 +37,17 @@ int main () {
         scanf("%f", &valor_euro);
         valor_real = valor_euro * cotacao_euro;
         printf("%.2f EUR = %.2f BRL\n", valor_euro, valor_real);
+    } else if (opcao == 5) {
+        printf("Digite o valor em Iene: ");
+        scanf("%f", &valor_iene);
+        valor_real = valor_iene * cotacao_iene;
+        printf("O valor em Real = R$%.2f \n", valor_real);
+    } else if (opcao == 6){
+        printf("Digite o valor em Real: ");
+        scanf("%f", &valor_real);
+        valor_iene = valor_real/cotacao_iene;
+        printf("O valor em Iene é = %.2f", valor_iene);
     } else {
         printf("Opcao invalida!\n");
-    }
-}
+    } 
+} 
