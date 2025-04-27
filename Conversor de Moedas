@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main () {
+
+    /* Programa para a conversão de moedas */
+
+    int opcao = 0;
+    float valor_real = 0;
+    float valor_dolar = 0;
+    float cotacao_dolar = 5.6833;
+
+    printf("Digite 1 para converter de real para dólar ou 2 para converter de dólar para real: ");
+    scanf(" %i", &opcao);
+
+    if (opcao == 1) {
+        printf("Digite o valor em reais: ");
+        scanf(" %f", &valor_real);
+        valor_dolar = valor_real / cotacao_dolar;
+        printf("O valor em dólares é: $ %.2f\n", valor_dolar);
+    }
+    else if (opcao == 2) {
+        printf("Digite o valor em dólares: ");
+        scanf(" %f", &valor_dolar);
+        valor_real = valor_dolar * cotacao_dolar;
+        printf("O valor em reais é: R$ %.2f\n", valor_real);
+    }
+    else {
+        printf("Opção inválida\n");
+    }
+
+    return 0;
+}
