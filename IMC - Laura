@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main()
+{
+    float peso = 0.0, altura = 0.0, imc = 0.0;
+    printf("Entre com seu peso:");
+    scanf("%f", &peso);
+    printf("entre com sua altura: ");
+    scanf("%f", &altura);
+    
+    printf("Seu peso = %3.2f e sua altura = %3.2f\n", peso, altura);
+    
+    imc = peso / (altura * altura);
+    printf("Seu imc = %3.2f\n", imc);
+    
+    if (imc<18.5)
+    printf("Classificação IMC = 18,5 = magreza = Obesidade grau 0\n");
+    
+    else if (imc>= 18.5 && imc<25)
+    printf("Classificação IMC = Entre 18,5 e 25 = Normal = Obesidade grau 0\n");
+    
+    else if (imc>= 25 && imc<29.9)
+    printf("Classificação IMC = Entre 25 e 29,9 = Sobrepeso = Obesidade grau I\n");
+    
+    else if (imc>= 30 && imc<39.9)
+    printf("Classificação IMC = Entre 30 e 39,9 = Obesidade = Obesidade II\n");
+    
+    else 
+    printf("Classificação IMC = 40 = Obesidade grave = Obesidade grau III \n");
+
+    return 0;
+}
