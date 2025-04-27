@@ -1,6 +1,7 @@
 #include <stdio.h>
 int main()
 {
+    // Declaração de variáveis
     float peso = 0.0, altura = 0.0, imc = 0.0, opcao;
     
     printf("Entre com seu peso em quilogamas (kg): ");
