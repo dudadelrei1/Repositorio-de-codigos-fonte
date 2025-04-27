@@ -42,14 +42,12 @@ int main () {
         scanf("%f", &valor_iene);
         valor_real = valor_iene * cotacao_iene;
         printf("O valor em Real = R$%.2f \n", valor_real);
-    } else if (opcao == 6) 
+    } else if (opcao == 6){
         printf("Digite o valor em Real: ");
         scanf("%f", &valor_real);
         valor_iene = valor_real/cotacao_iene;
         printf("O valor em Iene é = %.2f", valor_iene);
-    } 
-    
-    else {
+    } else {
         printf("Opcao invalida!\n");
-    }
-}
+    } 
+} 
