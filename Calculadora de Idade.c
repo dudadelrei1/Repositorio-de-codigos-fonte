@@ -67,7 +67,12 @@ int main(){
     else if ( ano == ano_nasc ){
         if ( mes > mes_nasc ){
             idade = mes - mes_nasc;
-            printf("Você tem %d meses\n", idade);
+            if ( idade == 1){
+                printf("Você tem %d mês\n", idade);
+            }
+            else {
+                printf("Você tem %d meses\n", idade);
+            }
         }
         else if ( mes == mes_nasc ){
             if ( dia > dia_nasc ){
