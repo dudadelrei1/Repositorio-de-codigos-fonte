@@ -1,31 +1,48 @@
 #include <stdio.h>
 int main()
 {
-    float peso = 0.0, altura = 0.0, imc = 0.0;
-    printf("Entre com seu peso:");
+    float peso = 0.0, altura = 0.0, imc = 0.0, opcao;
+    
+    printf("Entre com seu peso em quilogamas (kg): ");
     scanf("%f", &peso);
-    printf("entre com sua altura: ");
+    printf("Entre com sua altura em metros (m): ");
     scanf("%f", &altura);
     
-    printf("Seu peso = %3.2f e sua altura = %3.2f\n", peso, altura);
+    printf("\nSeu peso é %3.2fkg e sua altura é %3.2fm\n", peso, altura);
+    printf("As informações acima estão corretas?\n");
+    printf("Digite 1 para sim ou 2 para não: ");
+    scanf("%f", &opcao);
     
-    imc = peso / (altura * altura);
-    printf("Seu imc = %3.2f\n", imc);
+    if(opcao == 1){
+        imc = peso / (altura * altura);
+        printf("\nSeu imc = %3.2f\n", imc);
     
-    if (imc<18.5)
-    printf("Classificação IMC = 18,5 = magreza = Obesidade grau 0\n");
+        if (imc<18.5)
+        printf("Classificação IMC = 18,5 = magreza = Obesidade grau 0\n");
     
-    else if (imc>= 18.5 && imc<25)
-    printf("Classificação IMC = Entre 18,5 e 25 = Normal = Obesidade grau 0\n");
+        else if (imc>= 18.5 && imc<25)
+        printf("Classificação IMC = Entre 18,5 e 25 = Normal = Obesidade grau 0\n");
     
-    else if (imc>= 25 && imc<29.9)
-    printf("Classificação IMC = Entre 25 e 29,9 = Sobrepeso = Obesidade grau I\n");
+        else if (imc>= 25 && imc<29.9)
+        printf("Classificação IMC = Entre 25 e 29,9 = Sobrepeso = Obesidade grau I\n");
     
-    else if (imc>= 30 && imc<39.9)
-    printf("Classificação IMC = Entre 30 e 39,9 = Obesidade = Obesidade II\n");
+        else if (imc>= 30 && imc<39.9)
+        printf("Classificação IMC = Entre 30 e 39,9 = Obesidade = Obesidade II\n");
     
-    else 
-    printf("Classificação IMC = 40 = Obesidade grave = Obesidade grau III \n");
+        else 
+        printf("Classificação IMC = 40 = Obesidade grave = Obesidade grau III \n");
 
+    return 0;
+    }
+    
+    else if(opcao == 2){
+        printf("\nEntão, comece novamente");
+    }
+    
+    else{
+        printf("\nResposta não reconhecida\n");
+        printf("Comece novamente");
+    }
+    
     return 0;
 }
